@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>kkqq’s blog</title>
   
   
   <link href="http://www.zhangkanqi.com/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://www.zhangkanqi.com/</id>
   
   <author>
-    <name>Zhang Kanqi</name>
+    <name>kkqq</name>
     
   </author>
   
@@ -47,7 +47,7 @@
     <link href="http://www.zhangkanqi.com/2022/07/23/hello-world/"/>
     <id>http://www.zhangkanqi.com/2022/07/23/hello-world/</id>
     <published>2022-07-23T15:11:00.705Z</published>
-    <updated>2022-07-24T18:09:35.525Z</updated>
+    <updated>2022-07-25T09:12:50.869Z</updated>
     
     
       
@@ -60,6 +60,8 @@
     
     
     
+    
+    <category term="hello test" scheme="http://www.zhangkanqi.com/tags/hello-test/"/>
     
   </entry>
   
