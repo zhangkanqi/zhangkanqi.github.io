@@ -6,7 +6,7 @@
   <link href="http://www.zhangkanqi.com/atom.xml" rel="self"/>
   
   <link href="http://www.zhangkanqi.com/"/>
-  <updated>2022-07-23T16:33:32.322Z</updated>
+  <updated>2022-07-27T13:17:33.262Z</updated>
   <id>http://www.zhangkanqi.com/</id>
   
   <author>
@@ -17,37 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>second title</title>
-    <link href="http://www.zhangkanqi.com/2022/07/24/second-title/"/>
-    <id>http://www.zhangkanqi.com/2022/07/24/second-title/</id>
-    <published>2022-07-23T16:33:32.000Z</published>
-    <updated>2022-07-23T16:33:32.322Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>myarticle title</title>
-    <link href="http://www.zhangkanqi.com/2022/07/23/article-title/"/>
-    <id>http://www.zhangkanqi.com/2022/07/23/article-title/</id>
-    <published>2022-07-23T15:40:26.000Z</published>
-    <updated>2022-07-23T15:43:45.007Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://www.zhangkanqi.com/2022/07/23/hello-world/"/>
-    <id>http://www.zhangkanqi.com/2022/07/23/hello-world/</id>
-    <published>2022-07-23T15:11:00.705Z</published>
-    <updated>2022-07-26T11:36:04.968Z</updated>
+    <title>你好，世界</title>
+    <link href="http://www.zhangkanqi.com/hello-world/"/>
+    <id>http://www.zhangkanqi.com/hello-world/</id>
+    <published>2022-07-26T12:26:24.077Z</published>
+    <updated>2022-07-27T13:17:33.262Z</updated>
     
     
       

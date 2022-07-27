@@ -1,7 +1,12 @@
 ---
-title: Hello World
+title: 你好，世界
 tags: hello test
 typora-root-url: ../../public
+top: true
+img: /medias/featureimages/13.jpg
+cover: true
+mathjax: true
+summary: 这是文章摘要
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
@@ -15,7 +20,7 @@ $\pi$
 
 草地：
 
-![草地](/articleImages/hello-world/草地.jpg)
+![风景](/medias/featureimages/6.jpg)
 
 ---------
 
