@@ -6,7 +6,7 @@
   <link href="http://www.zhangkanqi.com/atom.xml" rel="self"/>
   
   <link href="http://www.zhangkanqi.com/"/>
-  <updated>2022-07-27T18:14:11.671Z</updated>
+  <updated>2022-07-27T19:45:02.121Z</updated>
   <id>http://www.zhangkanqi.com/</id>
   
   <author>
@@ -17,25 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>你好，世界</title>
-    <link href="http://www.zhangkanqi.com/hello-world/"/>
-    <id>http://www.zhangkanqi.com/hello-world/</id>
-    <published>2022-07-26T12:26:24.077Z</published>
-    <updated>2022-07-27T18:14:11.671Z</updated>
+    <title>GitHub+Hexo搭建博客保姆级教程</title>
+    <link href="http://www.zhangkanqi.com/github-hexo-blog-tutorial/"/>
+    <id>http://www.zhangkanqi.com/github-hexo-blog-tutorial/</id>
+    <published>2022-07-27T18:57:31.000Z</published>
+    <updated>2022-07-27T19:45:02.121Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;0-博客需求&quot;&gt;&lt;a href=&quot;#0-博客需求&quot; class=&quot;headerlink&quot; title=&quot;0. 博客需求&quot;&gt;&lt;/a&gt;0.</summary>
         
       
     
     
     
+    <category term="教程" scheme="http://www.zhangkanqi.com/categories/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="hello test" scheme="http://www.zhangkanqi.com/tags/hello-test/"/>
+    
+    <category term="blog" scheme="http://www.zhangkanqi.com/tags/blog/"/>
     
   </entry>
   
