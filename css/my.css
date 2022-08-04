@@ -42,7 +42,7 @@
     background-color: rgba(255,82,82,.1);
   }
   
-  .admonition.info, .admonition.todo {
+  .admonition.info, .admonition.todo{
     border-color: #00b8d4;
   }
   
