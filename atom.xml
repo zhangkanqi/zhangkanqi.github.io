@@ -6,7 +6,7 @@
   <link href="http://www.zhangkanqi.com/atom.xml" rel="self"/>
   
   <link href="http://www.zhangkanqi.com/"/>
-  <updated>2022-07-27T19:45:02.121Z</updated>
+  <updated>2022-08-04T17:27:01.229Z</updated>
   <id>http://www.zhangkanqi.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RISC-V向量化扩展1.0手册阅读笔记</title>
+    <link href="http://www.zhangkanqi.com/risc-v-spec-1-0-reading-notes/"/>
+    <id>http://www.zhangkanqi.com/risc-v-spec-1-0-reading-notes/</id>
+    <published>2022-08-04T16:38:52.000Z</published>
+    <updated>2022-08-04T17:27:01.229Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;2-实现中定义的常量参数&quot;&gt;&lt;a href=&quot;#2-实现中定义的常量参数&quot; class=&quot;headerlink&quot; title=&quot;2. 实现中定义的常量参数&quot;&gt;&lt;/a&gt;2.</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="http://www.zhangkanqi.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="RISC-V" scheme="http://www.zhangkanqi.com/tags/RISC-V/"/>
+    
+  </entry>
   
   <entry>
     <title>GitHub+Hexo搭建博客保姆级教程</title>
