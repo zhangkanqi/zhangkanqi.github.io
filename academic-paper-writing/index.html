@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="RISC-V向量化扩展1.0手册阅读笔记, kkqq’s blog">
-    <meta name="description" content="RISC-V向量化扩展1.0手册阅读笔记">
+    <meta name="keywords" content="计算机领域英文学术论文写作积累, kkqq’s blog">
+    <meta name="description" content="英文学术论文写作表达积累，一点点积累，一步步成长。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
 
     
 
-    <title>RISC-V向量化扩展1.0手册阅读笔记 | kkqq’s blog</title>
+    <title>计算机领域英文学术论文写作积累 | kkqq’s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -357,12 +357,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">RISC-V向量化扩展1.0手册阅读笔记</h1>
+                    <h1 class="description center-align post-title">计算机领域英文学术论文写作积累</h1>
                 </div>
             </div>
         </div>
@@ -478,12 +478,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/RISC-V/">
-                                <span class="chip bg-color">RISC-V</span>
+                            <a href="/tags/%E8%8B%B1%E6%96%87%E5%86%99%E4%BD%9C/">
+                                <span class="chip bg-color">英文写作</span>
                             </a>
                         
-                            <a href="/tags/%E5%90%91%E9%87%8F%E5%8C%96%E6%89%A9%E5%B1%95/">
-                                <span class="chip bg-color">向量化扩展</span>
+                            <a href="/tags/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87/">
+                                <span class="chip bg-color">学术论文</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">知识总结</span>
                             </a>
                         
                     </div>
@@ -494,8 +498,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                笔记
+                            <a href="/categories/%E5%86%99%E4%BD%9C%E7%A7%AF%E7%B4%AF/" class="post-category">
+                                写作积累
                             </a>
                         
                     </div>
@@ -507,28 +511,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-05
+                    2022-08-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-11
+                    2022-08-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    926
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -551,51 +555,769 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="2-实现中定义的常量参数"><a href="#2-实现中定义的常量参数" class="headerlink" title="2. 实现中定义的常量参数"></a>2. 实现中定义的常量参数</h1><p>hart是什么意思？</p>
-<p>每个hart支持定义了两个参数的向量扩展：</p>
-<ol>
-<li>$ELEN≥8$，且ELEN必须是2的指数。</li>
-</ol>
-<div class="admonition info"><p>ELEN：（任意操作可produce和consume的）向量元素的最大bit size。</p>
-</div>
-
-<ol start="2">
-<li>$ELEN≤VLEN≤2^{16}$，且VLEN必须是2的指数，</li>
-</ol>
-<div class="admonition info"><p>VLEN：单个向量寄存器中的bit数</p>
-</div>
-
-<div class="admonition warning"><p>在未来的扩展中可能ELEN&gt;VLEN，因为一个元素可以使用来自多个向量寄存器的bit。</p>
-<p>VLEN的上限允许软件知道索引满足16位。</p>
-</div>
-
-<p>向量化扩展支持编写二进制代码，在某些约束条件下，这些代码将在具有不同VLEN或ELEN值的harts上移植执行，前提是harts支持所需的元素类型和指令。</p>
-<h1 id="3-向量化扩展编程模型"><a href="#3-向量化扩展编程模型" class="headerlink" title="3. 向量化扩展编程模型"></a>3. 向量化扩展编程模型</h1><p>向量化扩展增加了<strong>32</strong>个向量寄存器和<strong>7</strong>个非特权的CSR到一个基准的RISC-V ISA中。</p>
-<img align="center" alt="新的向量CSR" src="https://cassieblog.oss-cn-beijing.aliyuncs.com/postImages/新的向量CSR.png/img_style" width="100%">
-
-<div class="admonition warning"><p>四个地址在0x00B-0x00E的CSR暂时为未来的向量CSR保留，其中一些可能被镜像到vcsr。</p>
-</div>
-
-<h2 id="3-1-向量寄存器"><a href="#3-1-向量寄存器" class="headerlink" title="3.1 向量寄存器"></a>3.1 向量寄存器</h2><p>向量扩展将32个结构向量寄存器v0-v31添加到基准的RISC-V ISA，每个向量寄存器都有一个固定的VLEN位状态。</p>
-<h2 id="3-2-mstatus中的向量上下文状态"><a href="#3-2-mstatus中的向量上下文状态" class="headerlink" title="3.2 mstatus中的向量上下文状态"></a>3.2 mstatus中的向量上下文状态</h2><p>向量上下文状态域<strong>VS</strong>(vector context status)已经被加入到mstatus[10:9]，并且被隐藏(shadow)在sstatus[10:9]。它类似于浮点的上下文状态域FS。</p>
-<p>为了执行任何向量指令或访问向量CSR，需要在mstatus.VS设置为Off时引发非法指令异常。</p>
-<p>当mstatus.VS被设置为初始值(Initial)或者被清除(Clean)时，执行任何会更改向量状态（包括向量CSR）的指令，都会将mstatus.VS置为脏(Dirty)。即使向量状态没有被改变，一些实现也可能会将mstatus.VS从Initial或Clean更改为Dirty。</p>
-<div class="admonition warning"><p>准确设置mstatus.VS是一种优化措施。软件通常会使用VS来减少上下文切换(context-swap)的开销。</p>
-</div>
-
-<p>如果mstatus.VS是Dirty，那么mstatus.SD就是1；否则，按照现有的规格设置mstatus.SD。</p>
-<p>一些实现中可能有一个可写的misa.V域。类似于浮点单元的处理方式，即使misa.V被清除了，mstatus.VS仍可能存在。</p>
-<div class="admonition warning"><p>当misa.V被清除时允许mstatus.VS存在，能支持向量模拟并简化在具有可写misa.V的系统中对mstatus.VS的处理。</p>
-</div>
-
-<h2 id="3-3-vsstatus中的向量上下文状态"><a href="#3-3-vsstatus中的向量上下文状态" class="headerlink" title="3.3 vsstatus中的向量上下文状态"></a>3.3 vsstatus中的向量上下文状态</h2><p>当hypervisor出现时，向量上下文状态域VS被添加到vsstatus[10:9]中。它类似于浮点上下文状态域FS。</p>
-<p>当V=1且vsstatus.VS和mstatus.VS生效时，尝试去执行任何向量指令或者访问向量CSR，若vsstatus.VS或mstatus.VS被设置成了Off，会引发非法指令异常。</p>
-<p>当V=1且vsstatus.VS和mstatus.VS都没被设置成Off，执行任何会更改向量状态（包括向量CSR）的指令，都会将mstatus.VS和vsstatus.VS置为Dirty。即使向量状态没有被改变，一些实现也可能在任意时刻将mstatus.VS或vsstatus.VS从Initial或Clean更改为Dirty。</p>
-<p>如果vsstatus.VS是Dirty，则vsstatus.SD是1；否则按照现有的规格设置vsstatus.SD。</p>
-<p>如果mstatus.VS是Dirty，那么mstatus.SD就是1；否则，按照现有的规格设置mstatus.SD。</p>
-<p>在具有可写的misa.V的一些实现中，即使misa.V被清除了，vsstatus.VS仍可能存在。</p>
-<h2 id="3-4-向量寄存器类型vtype"><a href="#3-4-向量寄存器类型vtype" class="headerlink" title="3.4 向量寄存器类型vtype"></a>3.4 向量寄存器类型vtype</h2><h1 id="4-向量元素和向量寄存器之间的映射"><a href="#4-向量元素和向量寄存器之间的映射" class="headerlink" title="4. 向量元素和向量寄存器之间的映射"></a>4. 向量元素和向量寄存器之间的映射</h1><h2 id="4-1-LMUL-x3D-1"><a href="#4-1-LMUL-x3D-1" class="headerlink" title="4.1 LMUL=1"></a>4.1 LMUL=1</h2><h2 id="4-2-LMUL-lt-1"><a href="#4-2-LMUL-lt-1" class="headerlink" title="4.2 LMUL<1"></a>4.2 LMUL&lt;1</h2><h2 id="4-3-LMUL-gt-1"><a href="#4-3-LMUL-gt-1" class="headerlink" title="4.3 LMUL>1"></a>4.3 LMUL&gt;1</h2><h1 id="5-向量指令格式"><a href="#5-向量指令格式" class="headerlink" title="5. 向量指令格式"></a>5. 向量指令格式</h1><h1 id="6-配置设置指令vsetvli-x2F-vsetivli-x2F-vsetvl"><a href="#6-配置设置指令vsetvli-x2F-vsetivli-x2F-vsetvl" class="headerlink" title="6. 配置设置指令vsetvli/vsetivli/vsetvl"></a>6. 配置设置指令vsetvli/vsetivli/vsetvl</h1><h1 id="7-向量load和store"><a href="#7-向量load和store" class="headerlink" title="7. 向量load和store"></a>7. 向量load和store</h1><h2 id="7-9-Vector-Load-x2F-Store-Whole-Register指令"><a href="#7-9-Vector-Load-x2F-Store-Whole-Register指令" class="headerlink" title="7.9 Vector Load/Store Whole Register指令"></a>7.9 Vector Load/Store Whole Register指令</h2><p>与unmasked unit-stride load and store instructions操作相似</p>
-
+                <h1 id="1-计算机专业词汇"><a href="#1-计算机专业词汇" class="headerlink" title="1. 计算机专业词汇"></a>1. 计算机专业词汇</h1><h2 id="1-1-名词缩写速查"><a href="#1-1-名词缩写速查" class="headerlink" title="1.1 名词缩写速查"></a>1.1 名词缩写速查</h2><p>欢迎评论补充(<em>╹▽╹</em>)</p>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>所属领域</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PC</td>
+<td>Programming Counter</td>
+<td></td>
+<td>程序计数器，指向下一个要执行的指令</td>
+</tr>
+<tr>
+<td>IPC</td>
+<td>Instructions Per Cycle</td>
+<td></td>
+<td>一个周期内执行的指令数</td>
+</tr>
+<tr>
+<td>CPI</td>
+<td>Cycles Per Instruction</td>
+<td></td>
+<td>执行完一条指令所需的周期数</td>
+</tr>
+<tr>
+<td>SoC</td>
+<td>System on a Chip</td>
+<td></td>
+<td>（芯）片上系统</td>
+</tr>
+<tr>
+<td>HDL</td>
+<td>Hardware Description Language</td>
+<td></td>
+<td>以文本形式来描述数字系统硬件的结构和行为的语言</td>
+</tr>
+<tr>
+<td>MMU</td>
+<td>Memory Management Unit</td>
+<td></td>
+<td>内存管理单元</td>
+</tr>
+<tr>
+<td>BTB</td>
+<td>Branch Target Buffer</td>
+<td></td>
+<td>分支目标缓存</td>
+</tr>
+<tr>
+<td>SFB</td>
+<td>Short-Forwards Branch</td>
+<td></td>
+<td>短向前跳分支，指出现频率很高并且覆盖指令很少的分支指令</td>
+</tr>
+<tr>
+<td>RAS</td>
+<td>Return-Address-Stack</td>
+<td></td>
+<td>branch（函数的）返回地址栈</td>
+</tr>
+<tr>
+<td>SRAM</td>
+<td>Static Random Access Memory</td>
+<td></td>
+<td>静态随机存取存储器</td>
+</tr>
+<tr>
+<td>DRAM</td>
+<td>Dynamic Random Access Memory</td>
+<td></td>
+<td>动态随机存取存储器</td>
+</tr>
+<tr>
+<td>LLC</td>
+<td>Last Level Cache</td>
+<td></td>
+<td>LLC refers to the highest-numbered cache that is accessed by the cores prior to fetching from memory.</td>
+</tr>
+<tr>
+<td>TEE</td>
+<td>Trusted Execution Environment</td>
+<td></td>
+<td>可信执行环境如Intel SGX、AMD</td>
+</tr>
+<tr>
+<td>CAM</td>
+<td>Content-Addressable Memory</td>
+<td></td>
+<td>内容寻址存储器，也称为关联存储器或关联存储，将输入搜索数据与存储数据表进行比较，并返回匹配数据的地址。</td>
+</tr>
+<tr>
+<td>TLB</td>
+<td>Translation Lookaside Buffer</td>
+<td></td>
+<td>TLB is a memory cache that stores the recent translations of virtual memory to physical memory.</td>
+</tr>
+<tr>
+<td>VLSI</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FPGA</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SIMD</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RoCC</td>
+<td>Rocket Custom Coprocessor</td>
+<td></td>
+<td>Rocket-core 的协处理器，可以通过RISC-V自定义扩展指令集作为命令控制RoCC执行</td>
+</tr>
+<tr>
+<td>CSR</td>
+<td>Control and Status Register</td>
+<td></td>
+<td>CSR is a register that stores various information in CPU.</td>
+</tr>
+<tr>
+<td>VLEN</td>
+<td>Vector Length</td>
+<td></td>
+<td>单个向量寄存器的bit数</td>
+</tr>
+<tr>
+<td>XLEN</td>
+<td></td>
+<td></td>
+<td>the width of an integer register in bits，如常见的32位或64位</td>
+</tr>
+<tr>
+<td>ELEN</td>
+<td>Element Length</td>
+<td></td>
+<td>向量元素的最大bit size</td>
+</tr>
+<tr>
+<td>LMUL</td>
+<td></td>
+<td></td>
+<td>Number of registers in each group，每个group里的向量寄存器数目</td>
+</tr>
+<tr>
+<td>ELMUL</td>
+<td>Effective LMUL</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SEW</td>
+<td>Selected Element Width</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>EEW</td>
+<td>Effective Element Width</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vl</td>
+<td>Vector Length Register</td>
+<td></td>
+<td><em>XLEN</em>-bit-wide read-only vl CSR</td>
+</tr>
+<tr>
+<td>vlenb</td>
+<td>Vector Byte Length Register</td>
+<td></td>
+<td><em>XLEN</em>-bit-wide read-only CSR vlenb holds the value VLEN/8, i.e., the vector register length in bytes.</td>
+</tr>
+<tr>
+<td>vstart</td>
+<td>Vector Start Index Register</td>
+<td></td>
+<td>vstart read-write CSR specifies the index of the  rst element to be executed by a vector instruction,</td>
+</tr>
+<tr>
+<td>vxrm</td>
+<td>Vector Fixed-Point Rounding Mode Register</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vxsat</td>
+<td>Vector Fixed-Point Saturation Flag</td>
+<td></td>
+<td>The vxsat CSR has a single read-write least-signi cant bit (vxsat[0]) that indicates if a  xed-point instruction has had to saturate an output value to  t into a destination format.</td>
+</tr>
+<tr>
+<td>vcsr</td>
+<td>Vector Control and Status Register</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="1-2-专业名词"><a href="#1-2-专业名词" class="headerlink" title="1.2 专业名词"></a>1.2 专业名词</h2><p>欢迎评论补充(<em>╹▽╹</em>)</p>
+<table>
+<thead>
+<tr>
+<th>英文</th>
+<th>音标</th>
+<th>中文</th>
+<th>解释或例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bandwidth</td>
+<td></td>
+<td>n. 带宽</td>
+<td></td>
+</tr>
+<tr>
+<td>consistency</td>
+<td></td>
+<td>n. 一致性</td>
+<td></td>
+</tr>
+<tr>
+<td>component</td>
+<td></td>
+<td>n. 组件</td>
+<td></td>
+</tr>
+<tr>
+<td>distribution</td>
+<td></td>
+<td>n. 发行版本</td>
+<td></td>
+</tr>
+<tr>
+<td>initialization</td>
+<td></td>
+<td>n. 初始化、赋初值</td>
+<td></td>
+</tr>
+<tr>
+<td>page-table</td>
+<td></td>
+<td>n. 页表</td>
+<td></td>
+</tr>
+<tr>
+<td>page table walk</td>
+<td></td>
+<td>n. 页表遍历</td>
+<td></td>
+</tr>
+<tr>
+<td>bug</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>debug</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>frequency</td>
+<td></td>
+<td>n. 频率、主频</td>
+<td></td>
+</tr>
+<tr>
+<td>bubble</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dual issue</td>
+<td></td>
+<td>n. 双发射</td>
+<td></td>
+</tr>
+<tr>
+<td>flavours</td>
+<td></td>
+<td>n. 版本</td>
+<td>RISC-V is little-endian and comes in 32 and 64 bit flavours.</td>
+</tr>
+<tr>
+<td>sequence</td>
+<td></td>
+<td>n. 序列</td>
+<td></td>
+</tr>
+<tr>
+<td>little-endian</td>
+<td></td>
+<td>n. 小尾端</td>
+<td></td>
+</tr>
+<tr>
+<td>big-endian</td>
+<td></td>
+<td>n. 大尾端</td>
+<td></td>
+</tr>
+<tr>
+<td>superscalar</td>
+<td>/ˌsuːpəˈskeɪlə; ˌsjuː-/</td>
+<td>adj.（计算机）超标量体系结构的</td>
+<td></td>
+</tr>
+<tr>
+<td>microarchitecture</td>
+<td></td>
+<td>n.  微体系结构</td>
+<td></td>
+</tr>
+<tr>
+<td>branch-prediction</td>
+<td></td>
+<td>n. 分支预测</td>
+<td></td>
+</tr>
+<tr>
+<td>branch predictor</td>
+<td></td>
+<td>n. 分支预测器</td>
+<td></td>
+</tr>
+<tr>
+<td>high-performance</td>
+<td></td>
+<td>n. 高性能</td>
+<td></td>
+</tr>
+<tr>
+<td>general-purpose computer</td>
+<td></td>
+<td>n. 通用计算机</td>
+<td></td>
+</tr>
+<tr>
+<td>datacenter</td>
+<td></td>
+<td>n. 数据中心</td>
+<td></td>
+</tr>
+<tr>
+<td>workstation</td>
+<td></td>
+<td>n. 工作站</td>
+<td></td>
+</tr>
+<tr>
+<td>in-order execution</td>
+<td></td>
+<td>n. 顺序执行</td>
+<td></td>
+</tr>
+<tr>
+<td>out-of-order</td>
+<td></td>
+<td>adj. 乱序</td>
+<td></td>
+</tr>
+<tr>
+<td>framework</td>
+<td></td>
+<td>n. 框架</td>
+<td></td>
+</tr>
+<tr>
+<td>model</td>
+<td></td>
+<td>n. 模型</td>
+<td></td>
+</tr>
+<tr>
+<td>chip</td>
+<td></td>
+<td>n. 芯片</td>
+<td></td>
+</tr>
+<tr>
+<td>core</td>
+<td></td>
+<td>n. 核、核心</td>
+<td></td>
+</tr>
+<tr>
+<td>open-source</td>
+<td></td>
+<td>adj. 开放源码的</td>
+<td></td>
+</tr>
+<tr>
+<td>functionality</td>
+<td>/ˌfʌŋkʃəˈnæləti/</td>
+<td>n. 功能</td>
+<td></td>
+</tr>
+<tr>
+<td>configuration</td>
+<td></td>
+<td>n. 配置</td>
+<td></td>
+</tr>
+<tr>
+<td>pipeline</td>
+<td></td>
+<td>n. 流水线</td>
+<td></td>
+</tr>
+<tr>
+<td>issue queue</td>
+<td></td>
+<td>n. 发射队列</td>
+<td></td>
+</tr>
+<tr>
+<td>register file</td>
+<td></td>
+<td>n. 寄存器文件</td>
+<td></td>
+</tr>
+<tr>
+<td>frontend</td>
+<td></td>
+<td>n. 前端</td>
+<td></td>
+</tr>
+<tr>
+<td>backend</td>
+<td></td>
+<td>n. 后端</td>
+<td></td>
+</tr>
+<tr>
+<td>cache</td>
+<td></td>
+<td>n. 高速缓存</td>
+<td></td>
+</tr>
+<tr>
+<td>buffer</td>
+<td></td>
+<td>n. 缓存</td>
+<td></td>
+</tr>
+<tr>
+<td>simulation</td>
+<td></td>
+<td>n. 仿真</td>
+<td></td>
+</tr>
+<tr>
+<td>critical path</td>
+<td></td>
+<td>n. 关键路径</td>
+<td></td>
+</tr>
+<tr>
+<td>floating point</td>
+<td></td>
+<td>n. 浮点</td>
+<td></td>
+</tr>
+<tr>
+<td>tight coupling</td>
+<td></td>
+<td>n. 紧耦合</td>
+<td></td>
+</tr>
+<tr>
+<td>pre-compiled</td>
+<td></td>
+<td>adj. 预编译的</td>
+<td></td>
+</tr>
+<tr>
+<td>cross-compilation</td>
+<td></td>
+<td>n. 交叉编译</td>
+<td></td>
+</tr>
+<tr>
+<td>library</td>
+<td></td>
+<td>n. 库</td>
+<td></td>
+</tr>
+<tr>
+<td>application</td>
+<td></td>
+<td>n. 应用</td>
+<td></td>
+</tr>
+<tr>
+<td>module</td>
+<td></td>
+<td>n. 模块、组件</td>
+<td></td>
+</tr>
+<tr>
+<td>machinery</td>
+<td>/məˈʃiːnəri/</td>
+<td>n. 机制、体系</td>
+<td></td>
+</tr>
+<tr>
+<td>mechanism</td>
+<td></td>
+<td>n. 方法、机制</td>
+<td></td>
+</tr>
+<tr>
+<td>fully-associative</td>
+<td></td>
+<td>adj. 全相连的</td>
+<td></td>
+</tr>
+<tr>
+<td>throughput</td>
+<td></td>
+<td>n. 吞吐量</td>
+<td></td>
+</tr>
+<tr>
+<td>snapshot</td>
+<td></td>
+<td>n. 快照</td>
+<td></td>
+</tr>
+<tr>
+<td>writeback</td>
+<td></td>
+<td>v. 写回</td>
+<td></td>
+</tr>
+<tr>
+<td>workload</td>
+<td></td>
+<td>n. 工作负载</td>
+<td></td>
+</tr>
+<tr>
+<td>accelerator</td>
+<td></td>
+<td>n. 加速器</td>
+<td></td>
+</tr>
+<tr>
+<td>microOp</td>
+<td></td>
+<td>n. 微操作</td>
+<td>也写作𝜇OP</td>
+</tr>
+<tr>
+<td>interface</td>
+<td></td>
+<td>n. 接口</td>
+<td></td>
+</tr>
+<tr>
+<td>operand</td>
+<td></td>
+<td>n. 操作数、操作对象</td>
+<td></td>
+</tr>
+<tr>
+<td>opcode</td>
+<td></td>
+<td>n. 操作码</td>
+<td></td>
+</tr>
+<tr>
+<td>outer memory</td>
+<td></td>
+<td>n. 外存</td>
+<td></td>
+</tr>
+<tr>
+<td>task</td>
+<td></td>
+<td>n. 任务</td>
+<td></td>
+</tr>
+<tr>
+<td>thread</td>
+<td></td>
+<td>n. 进程</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>n. 线程</td>
+<td></td>
+</tr>
+<tr>
+<td>machine learning</td>
+<td></td>
+<td>n. 机器学习</td>
+<td></td>
+</tr>
+<tr>
+<td>vector computation</td>
+<td></td>
+<td>n. 向量计算机</td>
+<td></td>
+</tr>
+<tr>
+<td>cryptography</td>
+<td>/krɪpˈtɑːɡrəfi/</td>
+<td>n. 密码学</td>
+<td></td>
+</tr>
+<tr>
+<td>architecture</td>
+<td></td>
+<td>n. 体系结构</td>
+<td></td>
+</tr>
+<tr>
+<td>microarchitecture</td>
+<td></td>
+<td>n. 微体系结构</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="2-从句子中学表达"><a href="#2-从句子中学表达" class="headerlink" title="2. 从句子中学表达"></a>2. 从句子中学表达</h1><h2 id="2-1-analogous-to-类似于"><a href="#2-1-analogous-to-类似于" class="headerlink" title="2.1 analogous to 类似于"></a>2.1 analogous to 类似于</h2><p><strong>Analogous to the way in which</strong> the floating-point unit is handled, the mstatus.VS field may exist even if misa.V is clear.</p>
+<p>It is defined <strong>analogously to</strong> the floating-point context status field, FS.</p>
+<h2 id="2-2-state-of-the-art-最先进的"><a href="#2-2-state-of-the-art-最先进的" class="headerlink" title="2.2 state-of-the-art 最先进的"></a>2.2 state-of-the-art 最先进的</h2>
                 
             </div>
             <hr/>
@@ -621,7 +1343,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.zhangkanqi.com/risc-v-spec-1-0-reading-notes/">http://www.zhangkanqi.com/risc-v-spec-1-0-reading-notes/</a>
+                    <a href="http://www.zhangkanqi.com/academic-paper-writing/">http://www.zhangkanqi.com/academic-paper-writing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -659,12 +1381,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/RISC-V/">
-                                    <span class="chip bg-color">RISC-V</span>
+                                <a href="/tags/%E8%8B%B1%E6%96%87%E5%86%99%E4%BD%9C/">
+                                    <span class="chip bg-color">英文写作</span>
                                 </a>
                             
-                                <a href="/tags/%E5%90%91%E9%87%8F%E5%8C%96%E6%89%A9%E5%B1%95/">
-                                    <span class="chip bg-color">向量化扩展</span>
+                                <a href="/tags/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87/">
+                                    <span class="chip bg-color">学术论文</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">知识总结</span>
                                 </a>
                             
                         </div>
@@ -835,7 +1561,7 @@
         repo: 'blogtalk',
         owner: 'zhangkanqi',
         admin: ["zhangkanqi"],
-        id: '2022-08-05T00-38-52',
+        id: '2022-08-09T00-42-49',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -869,30 +1595,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/academic-paper-writing/">
+                <a href="/boom-v3-paper-reading/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="计算机领域英文学术论文写作积累">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="SonicBOOM:The 3rd Generation Berkeley Out-of-Order Machine">
                         
-                        <span class="card-title">计算机领域英文学术论文写作积累</span>
+                        <span class="card-title">SonicBOOM:The 3rd Generation Berkeley Out-of-Order Machine</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            英文学术论文写作表达积累，一点点积累，一步步成长。
+                            BOOMv3论文阅读报告
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-17
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%86%99%E4%BD%9C%E7%A7%AF%E7%B4%AF/" class="post-category">
-                                    写作积累
+                            <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="post-category">
+                                    论文阅读
                                 </a>
                             
                             
@@ -902,16 +1628,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%8B%B1%E6%96%87%E5%86%99%E4%BD%9C/">
-                        <span class="chip bg-color">英文写作</span>
+                    <a href="/tags/RISC-V/">
+                        <span class="chip bg-color">RISC-V</span>
                     </a>
                     
-                    <a href="/tags/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">学术论文</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">知识总结</span>
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/">
+                        <span class="chip bg-color">论文阅读</span>
                     </a>
                     
                 </div>
@@ -925,30 +1647,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/github-hexo-blog-tutorial/">
+                <a href="/risc-v-spec-1-0-reading-notes/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="GitHub+Hexo搭建博客保姆级教程">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="RISC-V向量化扩展1.0手册阅读笔记">
                         
-                        <span class="card-title">GitHub+Hexo搭建博客保姆级教程</span>
+                        <span class="card-title">RISC-V向量化扩展1.0手册阅读笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从零开始的博客搭建教程，本博客主题功能齐全，界面美观，简单易上手。
+                            RISC-V向量化扩展1.0手册阅读笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
@@ -958,8 +1680,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog/">
-                        <span class="chip bg-color">blog</span>
+                    <a href="/tags/RISC-V/">
+                        <span class="chip bg-color">RISC-V</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%91%E9%87%8F%E5%8C%96%E6%89%A9%E5%B1%95/">
+                        <span class="chip bg-color">向量化扩展</span>
                     </a>
                     
                 </div>
