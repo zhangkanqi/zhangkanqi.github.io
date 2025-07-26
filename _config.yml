@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : ""
+title                    : "homepage"
 title_separator          : "-"
 name                     : &name "Kanqi Zhang"
 description              : &description "personal description"
