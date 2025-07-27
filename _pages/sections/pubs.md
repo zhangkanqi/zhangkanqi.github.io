@@ -13,5 +13,5 @@
     崔旭同, **张看起\***, 李淼, 李沛南, 孟丹, 侯锐
 
 
-* **\[TCC 2022\]: Cost-effective strong consistency on scalable geo-diverse data replicas** [[paper]](https://ieeexplore.ieee.org/abstract/document/9740519/)     
+* **\[TCC 2022\]: Cost-effective Strong Consistency on Scalable Geo-diverse Data Replicas** [[paper]](https://ieeexplore.ieee.org/abstract/document/9740519/)     
     Yunxiao Du, Zichen Xu\*, **Kanqi Zhang**, Jie Liu, Christopher Stewart, Jiacheng Huang
