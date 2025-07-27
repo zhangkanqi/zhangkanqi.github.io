@@ -24,7 +24,7 @@
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 0.1;
+  line-height: 1;
 }
 .ai-academia:before {
   content: "\e9af";
@@ -464,7 +464,7 @@
 /*  Duplication of the FontAwesome style classes using 'ai' in place of 'fa'. */
 .ai-lg {
   font-size: 1.33333em;
-  line-height: 0.75em;
+  line-height: 0.3em;
   vertical-align: -.0667em;
 }
 .ai-xs {
