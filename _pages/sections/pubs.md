@@ -2,7 +2,7 @@
   <!-- [[Paper]](../../files/issta25main_syzgpt.pdf) [[Code]](https://github.com/QGrain/SyzGPT) -->
   <!-- [![SyzGPT](https://img.shields.io/github/stars/QGrain/SyzGPT?style=social)](https://github.com/QGrain/SyzGPT) -->
   <!-- In *Proceedings of the 34th ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)*, Trondheim, Norway, June 2025 -->
-<p style="margin-bottom:0;">* denotes corresponding author</p>
+<p style="margin-bottom:0;">* denotes corresponding author</p> <!-- kkqq: Already set p{margin: 0 0 $indent-var;} in _page.scss. For aesthetic purposes, we require a 0 margin-bottom here. -->
 
 * **\[MICRO 2025\]: Sonar: A Hardware Fuzzing Framework to Uncover Contention Side Channels in Processors**     
     **Kanqi Zhang**, Peinan Li, Miao Li, Xin Tian, Zelong Du, Quachen Liu, Yongqiang Lyu, Yu Jiang, Dan Meng, Rui Hou\*
