@@ -1,20 +1,17 @@
 # 📝 Publications 
 \* denotes corresponding author
-
-* **[MICRO 2025]: Sonar: A Hardware Fuzzing Framework to Uncover Contention Side Channels in Processors**
   <!-- [[Paper]](../../files/issta25main_syzgpt.pdf) [[Code]](https://github.com/QGrain/SyzGPT) -->
   <!-- [![SyzGPT](https://img.shields.io/github/stars/QGrain/SyzGPT?style=social)](https://github.com/QGrain/SyzGPT) -->
   <!-- In *Proceedings of the 34th ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)*, Trondheim, Norway, June 2025 -->
 
-  **Kanqi Zhang**, Peinan Li, Miao Li, Xin Tian, Zelong Du, Quachen Liu, Yongqiang Lyu, Yu Jiang, Dan Meng, Rui Hou\*
+
+* **\[MICRO 2025\]: Sonar: A Hardware Fuzzing Framework to Uncover Contention Side Channels in Processors**     
+    **Kanqi Zhang**, Peinan Li, Miao Li, Xin Tian, Zelong Du, Quachen Liu, Yongqiang Lyu, Yu Jiang, Dan Meng, Rui Hou\*
 
 
+* **\[信息安全学报 2024\]: 处理器模糊测试技术研究综述** [[paper]](https://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?flag=2&file_no=202403060000001&journal_id=xxaqxb)     
+    崔旭同, **张看起\***, 李淼, 李沛南, 孟丹, 侯锐
 
-<!--
-* **[Journal of Cyber Security 2024]: A Survey on Processor Fuzz Testing Technologies** [[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-72792-5_48)
 
-    In *Proceedings of the 12th International Conference on Simulation Tools and Techniques (SIMUTools)*, Virtually, August 2020
-    
-    Dewei Zeng, **Zhiyu Zhang**\*, Jiye Chen, Xiaojun Hei
-
--->
+* **\[TCC 2022\]: Cost-effective strong consistency on scalable geo-diverse data replicas** [[paper]](https://ieeexplore.ieee.org/abstract/document/9740519/)     
+    Yunxiao Du, Zichen Xu\*, **Kanqi Zhang**, Jie Liu, Christopher Stewart, Jiacheng Huang
