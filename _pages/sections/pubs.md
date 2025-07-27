@@ -7,11 +7,7 @@
 
 * **\[MICRO 2025\]: Sonar: A Hardware Fuzzing Framework to Uncover Contention Side Channels in Processors**     
     **Kanqi Zhang**, Peinan Li, Miao Li, Xin Tian, Zelong Du, Quachen Liu, Yongqiang Lyu, Yu Jiang, Dan Meng, Rui Hou\*
-
-
 * **\[信息安全学报 2024\]: 处理器模糊测试技术研究综述** [[paper]](https://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?flag=2&file_no=202403060000001&journal_id=xxaqxb)     
     崔旭同, **张看起\***, 李淼, 李沛南, 孟丹, 侯锐
-
-
 * **\[TCC 2022\]: Cost-effective Strong Consistency on Scalable Geo-diverse Data Replicas** [[paper]](https://ieeexplore.ieee.org/abstract/document/9740519/)     
     Yunxiao Du, Zichen Xu\*, **Kanqi Zhang**, Jie Liu, Christopher Stewart, Jiacheng Huang
