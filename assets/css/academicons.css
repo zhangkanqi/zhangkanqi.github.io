@@ -464,7 +464,7 @@
 /*  Duplication of the FontAwesome style classes using 'ai' in place of 'fa'. */
 .ai-lg {
   font-size: 1.33333em;
-  line-height: 0.3em;
+  line-height: 0.75em;
   vertical-align: -.0667em;
 }
 .ai-xs {
@@ -512,7 +512,7 @@
 
 .ai-ul {
   list-style-type: none;
-  margin-left: 2.5em;
+  margin-left: 2em;
   padding-left: 0;
 }
 .ai-ul > li {
