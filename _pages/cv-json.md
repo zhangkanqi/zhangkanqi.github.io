@@ -20,9 +20,9 @@ redirect_from:
     padding-right: 0;
   }
   
-  @media (min-width: 80em) {
+  @media (min-width: 100em) {
     .archive {
-      width: 70%;
+      width: 100%;
     }
   }
 </style>
