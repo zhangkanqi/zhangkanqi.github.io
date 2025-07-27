@@ -14,7 +14,7 @@ redirect_from:
 
 <style>
   .archive {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     float: none;
     padding-right: 0;
