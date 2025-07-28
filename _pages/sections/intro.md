@@ -3,7 +3,7 @@ Prior to IIE, I received my Bachelor’s degree with honors from the School of I
 
 
 My current research interests include _computer (micro)architecture security, hardware verification and testing_, especially the detection of vulnerabilities and bugs in open-source processors at the RTL (Register-Transfer Level) stage.
-If you are interested in collaboration or have any questions, please feel free to contact me 😃 (zhangkanqi@iie.ac.cn).
+If you are interested in collaboration or have any questions, please feel free to contact me 😃.
 
 
 
