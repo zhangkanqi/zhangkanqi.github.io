@@ -6,6 +6,7 @@
     - DAC: 2025
     - ICCD: 2024, 2025
     - ASP-DAC: 2026
+    - AsianHost: 2025
 
 # 👩‍🏫 Teaching
 
