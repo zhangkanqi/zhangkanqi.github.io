@@ -1,4 +1,5 @@
 # 🎖 Awards
+- *2025* Best Project Poster Award, CCF SYS
 - *2023* Outstanding Student of UCAS
 - *2022* Champion, Freshmen Badminton Competition (mixed doubles), School of Cyberspace Security, UCAS
 - *2021* "Most Outstanding Student", Nanchang University (Top 10 in the university)
