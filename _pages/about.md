@@ -17,4 +17,6 @@ redirect_from:
 
 {% include_relative sections/services.md %}
 
+{% include_relative sections/talk_teach.md %}
+
 {% include_relative sections/tools.md %}
