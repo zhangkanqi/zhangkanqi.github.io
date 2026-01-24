@@ -5,11 +5,11 @@
   <!--  (<span style="background-color: #dc2626; color: white; padding: 3px 8px; border-radius: 5px; font-weight: 600; font-size: 0.8em;">CCF-A</span>)     -->
 <p style="margin-bottom:0;">* denotes corresponding author</p> <!-- kkqq: Already set p{margin: 0 0 $indent-var;} in _page.scss. For aesthetic purposes, we require a 0 margin-bottom here. -->
 
-- <span style="background-color: #3b82f6; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.85em; margin-right: 6px;">MICRO'25</span> **Sonar: A Hardware Fuzzing Framework to Uncover Contention Side Channels in Processors** [[Paper]](../../files/sonar-micro25-camera_ready.pdf)<br>
+- <span style="background-color: #0969da; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.85em; margin-right: 6px;">MICRO'25</span> **Sonar: A Hardware Fuzzing Framework to Uncover Contention Side Channels in Processors** [[Paper]](../../files/sonar-micro25-camera_ready.pdf)<br>
   **<u>Kanqi Zhang</u>**, Peinan Li\*, Miao Li, Xin Tian, Zelong Du, Quachen Liu, Yongqiang Lyu, Yu Jiang, Dan Meng, Rui Hou\*<br>
   *The 58th IEEE/ACM International Symposium on Microarchitecture, 2025*
-- <span style="background-color: #3b82f6; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.85em; margin-right: 6px;">信息安全学报'24</span> **处理器模糊测试技术研究综述** [[paper]](https://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?flag=2&file_no=202403060000001&journal_id=xxaqxb)<br>
+- <span style="background-color: #0969da; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.85em; margin-right: 6px;">信息安全学报'24</span> **处理器模糊测试技术研究综述** [[paper]](https://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?flag=2&file_no=202403060000001&journal_id=xxaqxb)<br>
   崔旭同, **<u>张看起</u>\***, 李淼, 李沛南, 孟丹, 侯锐
-- <span style="background-color: #3b82f6; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.85em; margin-right: 6px;">TCC'22</span> **Cost-effective Strong Consistency on Scalable Geo-diverse Data Replicas** [[paper]](https://ieeexplore.ieee.org/abstract/document/9740519/)<br>
+- <span style="background-color: #0969da; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.85em; margin-right: 6px;">TCC'22</span> **Cost-effective Strong Consistency on Scalable Geo-diverse Data Replicas** [[paper]](https://ieeexplore.ieee.org/abstract/document/9740519/)<br>
   Yunxiao Du, Zichen Xu\*, **<u>Kanqi Zhang</u>**, Jie Liu, Christopher Stewart, Jiacheng Huang<br>
   *IEEE Transactions on Cloud Computing, 2022*
