@@ -1,6 +1,7 @@
 # 💬 Services
 
 - Sub-Reviewer:
+    - HPCA: 2026 
     - ISCA: 2025
     - TCAD: 2024
     - TC: 2026
